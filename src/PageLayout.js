@@ -3,6 +3,9 @@ import "./style/global.css"
 import Navbar from './components/Navbar.tsx';
 import DataPacketPage from './components/DataPacketPage.tsx';
 import SessionPage from './components/SessionPage.tsx';
+import IpStats from './components/IpStats.tsx';
+import ProtoStats from './components/ProtoStats.tsx';
+import RegionStats from './components/RegionStats.tsx';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
 import {
@@ -74,9 +77,9 @@ function PageLayout() {
                                             </>
                                         }
                                     >
-                                        <MenuItem key='ipCount'>IP统计</MenuItem>
-                                        <MenuItem key='protoCount'>协议统计</MenuItem>
-                                        <MenuItem key='countryCount'>国家统计</MenuItem>
+                                        <MenuItem key='ipCount'><Link to="/statistic/ip">IP统计</Link></MenuItem>
+                                        <MenuItem key='protoCount'><Link to="/statistic/proto">协议统计</Link></MenuItem>
+                                        <MenuItem key='regionCount'><Link to="/statistic/region">国家与地区统计</Link></MenuItem>
                                     </SubMenu>
                                 </Menu>
                             </div>
@@ -85,6 +88,9 @@ function PageLayout() {
                             <Routes>
                                 <Route path="/dataPacket/:type" element={<DataPacketPage />} />
                                 <Route path="/session/:type" element={<SessionPage />} />
+                                <Route path="/statistic/ip" element={<IpStats />} />
+                                <Route path="/statistic/proto" element={<ProtoStats />} />
+                                <Route path="/statistic/region" element={<RegionStats />} />
                             </Routes>
                         </Content>
                     </Layout>
