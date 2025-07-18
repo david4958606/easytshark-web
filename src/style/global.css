@@ -1,0 +1,37 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.layout-basic-demo {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-basic-demo .arco-layout-footer,
+.layout-basic-demo .arco-layout-sider-children,
+.layout-basic-demo .arco-layout-content {
+  text-align: left;
+  font-stretch: condensed;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-basic-demo .arco-layout-footer {
+  height: 64px;
+  background-color: var(--color-primary-light-4);
+}
+
+.layout-basic-demo .arco-layout-sider {
+  width: 206px;
+}
+
+.layout-basic-demo .arco-layout-content {
+  background-color: #eee;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
